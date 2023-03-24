@@ -28,9 +28,9 @@ c = sm.add_constant(X)
 capm_model = sm.OLS(y, c)
 result = capm_model.fit()
 print(result.summary())
-intercept, beta = result.params
-
-expected_return = rf + beta*market_premium
-print("Expected monthly returns: " + str(expected_return))
-yearly_return = expected_return * 12
-print("Expected yearly returns: " + str(yearly_return))
+# intercept, beta = result.params
+#
+# expected_return = rf + beta*market_premium
+# print("Expected monthly returns: " + str(expected_return))
+# yearly_return = expected_return * 12
+# print("Expected yearly returns: " + str(yearly_return))

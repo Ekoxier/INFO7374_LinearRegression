@@ -4,7 +4,7 @@ import statsmodels.api as sm
 import getFamaFrenchFactors as gff
 
 # http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
-ticker = 'AMZN'
+ticker = 'TSLA'
 start = '2022-3-20'
 end = '2023-3-20'
 
