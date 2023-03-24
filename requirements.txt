@@ -1,0 +1,6 @@
+yfinance
+pandas
+getFamaFrenchFactors
+statsmodels
+matplotlib
+openpyxl
