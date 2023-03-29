@@ -43,7 +43,7 @@ stock_data = yf.download(ticker, start, end)
 obv_data = OBV(stock_data['Adj Close'],stock_data['Volume'], len(stock_data))
 merge_data = stock_data.merge(obv_data,on="Date")
 
-X = merge_data[['Open', 'OBV']][:len(merge_data) - 1].reset_index(drop=True)
+X = merge_data[['Open', 'OBV']][:-1].reset_index(drop=True)
 Y = merge_data['Open'][1:].reset_index(drop=True)
 X = sm.add_constant(X)
 print(X)

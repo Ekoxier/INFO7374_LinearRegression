@@ -10,15 +10,18 @@ start = '2022-3-20'
 end = '2023-3-20'
 
 stock_data = yf.download(ticker, start, end)
-tmp_x = stock_data.copy();
+tmp_x = stock_data.copy()
 tmp_x['Open-1'] = stock_data['Open'].shift(1)
 tmp_x['Open-2'] = stock_data['Open'].shift(2)
 tmp_x['Open-3'] = stock_data['Open'].shift(3)
-X = tmp_x[['Open-1','Open-2','Open-3']][3:].reset_index(drop=True)
+X = tmp_x[['Open-1', 'Open-2', 'Open-3']][3:].reset_index(drop=True)
+print(X)
 # X = stock_data[['Open']][:len(stock_data) - 1].reset_index(drop=True)
 Y = stock_data['Open'][3:].reset_index(drop=True)
 X = sm.add_constant(X)
 ff_model = sm.OLS(Y, X).fit()
+print(ff_model.rsquared_adj)
+print(ff_model.rsquared)
 print(ff_model.summary())
 #
 # fig, ax = plt.subplots()
