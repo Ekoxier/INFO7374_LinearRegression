@@ -25,7 +25,7 @@ tmp_X = ff3_factors[['Mkt', 'SMB', 'HML', 'Date']]
 tmp_Y = (np.log(stock_data['Adj Close']) - np.log(stock_data['Adj Close'].shift(1)))
 tmp_XY = tmp_X.merge(tmp_Y, on='Date')
 X = tmp_XY[['Mkt', 'SMB', 'HML']][:-1].reset_index(drop=True)
-Y  = tmp_XY['Adj Close'][1:].reset_index(drop=True)
+Y = tmp_XY['Adj Close'][1:].reset_index(drop=True)
 print(X)
 print(Y)
 X = sm.add_constant(X)

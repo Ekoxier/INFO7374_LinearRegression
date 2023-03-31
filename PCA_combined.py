@@ -8,16 +8,16 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 import getFamaFrenchFactors as gff
 import statsmodels.api as sm
-
+import seaborn as sns
 from datetime import datetime
 dateparse = lambda x: datetime.strptime(x, '%Y:%m:%d')
 
 # Download Tesla stock data for 1000 days
-start_date = datetime(2018,1,1)
-end_date = datetime(2019,1,1)
+start_date = datetime(2021, 1, 1)
+end_date = datetime(2022, 1, 1)
 ticker = "TSLA"
 df = yf.download(ticker, start=start_date, end=end_date)
-# df_sp500 = yf.download('SPY',start_date,end_date)
+df_sp500 = yf.download('SPY',start_date,end_date)
 
 
 # ads_data = pd.read_excel("ads_slice.xlsx", parse_dates=['Date'], date_parser=dateparse)
